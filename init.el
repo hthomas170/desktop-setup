@@ -41,9 +41,6 @@
 (define-key global-map (kbd "C-c i") 'org-capture-inbox)
 
 (require 'org-agenda)
-;; (setq initial-buffer-choice (lambda ()
-;; 			      (org-agenda nil "n")
-;; 			      (get-buffer "*Org Agenda*")))
 (org-agenda nil "n")
 (add-hook 'emacs-startup-hook (lambda ()
 				(when (get-buffer "*scratch*")
@@ -51,30 +48,12 @@
 (setq org-log-done t)
 (define-key global-map [remap find-file] 'helm-find-files)
 
-;;(setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
-
 ;; Set the title
 (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
 ;; Content is not centered by default. To center, set
 (setq dashboard-center-content t)
 (setq dashboard-items '((recents . 5)
 			(bookmarks . 5)))
-			;;(projects . 5)
-;; 			(agenda . 5)))
-
-
-
-;; (add-to-list 'dashboard-item-generators '(custom . dashboard-insert-custom))
-;; (add-to-list 'dashboard-items '(custom) t)
-
-;; (defun dashboard-insert-custom (list-size)
-;;   (dashboard-insert-section
-;;    "Global todos:"
-;;    '("Custom text")
-;;    list-size
-;;    "t"
-;;    (lambda (&rest _) (jump-to-custom (car el)))
-;;    (format "%s" el)))
 
 ;; I use that to display org agenda by dahsboard side, maybe its a bit messy, cause
 ;; I didn't really split the screen anywere
